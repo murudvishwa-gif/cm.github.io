@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blogs — VELOX Chemical</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/stackly-logo.png" alt="Stackly" class="brand-logo">
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="links" id="navLinks">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="blogs.html" class="nav-link">Blogs</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-ghost" onclick="openAuth('login')"><span>Log In</span></button>
+      <button class="btn btn-primary" onclick="openAuth('signup')"><span>Sign Up</span></button>
+    </div>
+  </div>
+</header>
+<main id="site">
+  <section id="blogs">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">Notes From the Floor</div>
+        <h2>Latest from the lab &amp; plant</h2>
+        <p>Field notes on process engineering, compliance and the occasional reactor failure we learned from.</p>
+      </div>
+      <div class="blog-grid reveal-stagger">
+        <article class="blog-card">
+          <div class="blog-thumb">
+            <img src="assets/blog-analytics.webp" alt="Analytical instruments and glassware in a lab">
+          </div>
+          <div class="blog-body">
+            <div class="blog-tag">Sustainability</div>
+            <h3>Inside our zero-waste solvent recovery loop</h3>
+            <p>How a closed-loop distillation system cut solvent waste by 86% without slowing the line.</p>
+            <div class="blog-meta"><span>Mar 12, 2026</span><span>6 min read</span></div>
+            <a href="#" class="read-link" style="margin-top:14px">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-thumb">
+            <img src="assets/blog-operators.webp" alt="Operators inspecting process data in a chemical plant">
+          </div>
+          <div class="blog-body">
+            <div class="blog-tag">Engineering</div>
+            <h3>Batch vs. continuous: choosing the right reactor</h3>
+            <p>A practical framework for deciding which reactor architecture fits your production volume.</p>
+            <div class="blog-meta"><span>Feb 24, 2026</span><span>8 min read</span></div>
+            <a href="#" class="read-link" style="margin-top:14px">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-thumb">
+            <img src="assets/blog-controls.webp" alt="Industrial piping and reactor controls in a manufacturing facility">
+          </div>
+          <div class="blog-body">
+            <div class="blog-tag">Compliance</div>
+            <h3>Navigating REACH compliance in 2026</h3>
+            <p>What changed this year and how our documentation pipeline keeps shipments moving.</p>
+            <div class="blog-meta"><span>Jan 30, 2026</span><span>5 min read</span></div>
+            <a href="#" class="read-link" style="margin-top:14px">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="trending" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Trending</div>
+        <h2>Recent insights shaping modern chemical manufacturing</h2>
+        <p>These topics are drawing attention from process teams, safety leaders and supply chain partners.</p>
+      </div>
+      <div class="feature-grid reveal-stagger">
+        <div class="feature-card"><h3>Inline analytics</h3><p>How real-time measurements reduce hold time and improve batch release confidence.</p></div>
+        <div class="feature-card"><h3>Batch traceability</h3><p>From raw material to finished load, strong data capture is the foundation of predictable chemistry.</p></div>
+        <div class="feature-card"><h3>Global shipments</h3><p>Planning for cross-border moves early prevents delays and keeps hazardous shipments compliant.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="featured" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Featured story</div>
+        <h2>How consistent analytics keep our batch quality high</h2>
+        <p>Behind the scenes of the instrumentation and inspection workflow that stops off-spec material before it moves on.</p>
+      </div>
+      <div class="card-panel">
+        <p>Our analytics team combines inline measurements with discrete testing to give production operators immediate feedback. That means faster decisions during scale-up and fewer reworks on large batches.</p>
+      </div>
+    </div>
+  </section>
+  <section id="categories" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Topics</div>
+        <h2>Research, engineering and compliance</h2>
+        <p>Browse our latest content by the themes that matter most to process-driven teams.</p>
+      </div>
+      <div class="feature-grid reveal-stagger">
+        <div class="feature-card"><h3>Process optimization</h3><p>Practical guidance for scaling and stabilizing chemical production.</p></div>
+        <div class="feature-card"><h3>Quality systems</h3><p>Insights on testing, release criteria and documentation workflows.</p></div>
+        <div class="feature-card"><h3>Regulatory updates</h3><p>Summaries of changes that can affect materials handling and shipment.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="newsletter" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Stay informed</div>
+        <h2>Get new plant insights in your inbox</h2>
+        <p>Subscribe for short updates on manufacturing trends, compliance shifts, and Velox process stories.</p>
+      </div>
+      <div class="card-panel">
+        <form class="split-grid" style="grid-template-columns:1.5fr 0.5fr; gap:18px;">
+          <input type="email" placeholder="you@company.com" style="width:100%; padding:14px; border-radius:4px; border:1px solid var(--border); background:var(--panel); color:var(--text);" required>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section id="archive" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Archive</div>
+        <h2>Recent posts at a glance</h2>
+        <p>Quick access to our newest posts and popular operational guides.</p>
+      </div>
+      <div class="feature-grid reveal-stagger">
+        <div class="feature-card"><h3>Streamlined documentation</h3><p>How we keep process records accurate and easily auditable.</p></div>
+        <div class="feature-card"><h3>Reactor selection</h3><p>Choosing the right vessel for pilot, semi-batch and continuous work.</p></div>
+        <div class="feature-card"><h3>Solvent efficiency</h3><p>Reducing waste through recovery, reuse and solvent selection.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo"><img src="assets/stackly-logo.png" alt="Stackly" class="brand-logo"></a>
+      <p>Precision chemical manufacturing for partners who need predictable quality, fast turnarounds, and compliance-ready production every time.</p>
+      <div class="footer-social">
+        <a href="404.html" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v8h-4v-8a2 2 0 0 0-2-2h-2v10h-4V8h4V6.5C14 4.57 15.57 3 17.5 3S21 4.57 21 6.5V8h-5z"/></svg>
+        </a>
+        <a href="404.html" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 5.92c-.8.35-1.65.58-2.55.69a4.44 4.44 0 0 0 1.96-2.45 8.8 8.8 0 0 1-2.8 1.08 4.4 4.4 0 0 0-7.5 4.02A12.48 12.48 0 0 1 3.15 4.8a4.37 4.37 0 0 0-.6 2.21 4.4 4.4 0 0 0 1.96 3.66 4.37 4.37 0 0 1-2-.56v.06a4.4 4.4 0 0 0 3.52 4.31 4.44 4.44 0 0 1-2 .08 4.4 4.4 0 0 0 4.11 3.05A8.82 8.82 0 0 1 2 19.54 12.43 12.43 0 0 0 8.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.54A8.36 8.36 0 0 0 22 5.92z"/></svg>
+        </a>
+        <a href="404.html" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5v-11z"/><path d="M21 6.5 12 13 3 6.5"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blogs.html">Insights</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-column">
+      <h4>Capabilities</h4>
+      <a href="services.html">Custom synthesis</a>
+      <a href="services.html">Quality testing</a>
+      <a href="services.html">Packaging</a>
+      <a href="services.html">Regulatory support</a>
+    </div>
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <p>info@stackly.com</p>
+      <p>7010792745</p>
+      <p>Salem, Tamil Nadu</p>
+    </div>
+    <div class="footer-column footer-subscribe">
+      <h4>Stay informed</h4>
+      <p>Receive production insights, regulatory updates, and new service announcements.</p>
+      <form class="newsletter-form footer-newsletter-form">
+        <input type="email" placeholder="you@company.com" aria-label="Email for newsletter">
+        <button type="submit" class="btn btn-primary"><span>Subscribe</span></button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Velox Chemical Co. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Site map</a>
+    </div>
+  </div>
+</footer>
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-card">
+    <button class="auth-close" onclick="closeAuth()" aria-label="Close">✕</button>
+    <div class="auth-panel active" id="loginPanel">
+      <div class="auth-eyebrow">Client Portal</div>
+      <h2>Log in</h2>
+      <p class="sub">Access batch records, certificates of analysis and shipment tracking.</p>
+      <form class="auth-form" onsubmit="return submitAuth(event,'login')">
+        <div class="field"><label for="li-email">Email</label><input id="li-email" type="email" required placeholder="you@company.com"></div>
+        <div class="field"><label for="li-domain">Domain</label><select id="li-domain" required><option value="" selected disabled>Choose your domain</option><option>Manufacturing</option><option>Research &amp; Development</option><option>Pharmaceutical</option><option>Supplier</option><option>Other</option></select></div>
+        <div class="field"><label for="li-pass">Password</label><input id="li-pass" type="password" required placeholder="••••••••"></div>
+        <div class="auth-form-options"><button type="button" class="forgot-password" onclick="requestPasswordReset()">Forgot password?</button></div>
+        <p class="auth-message" aria-live="polite"></p>
+        <button type="submit" class="btn btn-primary auth-submit"><span>Log In</span></button>
+      </form>
+      <div class="auth-switch">New to Velox? <button onclick="switchAuth('signup')">Create an account</button></div>
+    </div>
+    <div class="auth-panel" id="signupPanel">
+      <div class="auth-eyebrow">Client Portal</div>
+      <h2>Sign up</h2>
+      <p class="sub">Set up an account to request quotes and track production runs.</p>
+      <form class="auth-form" onsubmit="return submitAuth(event,'signup')">
+        <div class="field"><label for="su-name">Company name</label><input id="su-name" type="text" required placeholder="Acme Industries"></div>
+        <div class="field"><label for="su-email">Email</label><input id="su-email" type="email" required placeholder="you@company.com"></div>
+        <div class="field"><label for="su-pass">Password</label><input id="su-pass" type="password" required placeholder="••••••••"></div>
+        <button type="submit" class="btn btn-primary auth-submit"><span>Create Account</span></button>
+      </form>
+      <div class="auth-switch">Already have an account? <button onclick="switchAuth('login')">Log in</button></div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

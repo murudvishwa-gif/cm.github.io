@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Page Not Found</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/stackly-logo.png" alt="Stackly" class="brand-logo">
+    </a>
+  </div>
+</header>
+<main class="notfound-page">
+  <div class="container notfound-content">
+    <div>
+      <div class="eyebrow">Page not found</div>
+      <h1>404</h1>
+      <h2>We couldn't find that page.</h2>
+      <p>The link you followed appears to be broken or the page has been moved.</p>
+      <div class="notfound-actions">
+        <a href="index.html" class="btn btn-primary" onclick="if (history.length > 1) { event.preventDefault(); history.back(); }"><span>Go back</span></a>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Dashboard — Stackly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="premium-dashboard">
+<header class="dashboard-topbar">
+  <a href="user-dashboard.html" class="dashboard-brand"><img src="assets/stackly-logo.png" alt="Stackly"></a>
+  <div class="dashboard-header-actions">
+    <button class="dashboard-icon-button" data-dashboard-action="notifications" aria-label="Notifications" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><span class="notification-dot"></span></button>
+    <button class="profile-button" data-dashboard-action="profile" aria-label="Open profile" aria-expanded="false"><span class="profile-avatar">VK</span><span class="profile-copy"><strong>Vishwa Kumar</strong><small>Premium member</small></span><svg viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></svg></button>
+  </div>
+</header>
+<div class="dashboard-shell">
+  <aside class="dashboard-sidebar">
+    <p class="sidebar-label">Workspace</p>
+    <nav>
+      <a class="active" href="#overview">Overview</a><a href="#performance">Performance</a><a href="#projects">Projects</a><a href="#billing">Billing</a><a href="#documents">Documents</a><a href="#support">Support</a><a href="index.html" class="sidebar-logout">Log out</a>
+    </nav>
+    <div class="sidebar-upgrade"><span>PRO PLAN</span><strong>Unlock more capacity</strong><p>Scale your workspace with advanced insights.</p><button>View plan</button></div>
+    <a href="index.html" class="dashboard-logout">← Back to website</a>
+  </aside>
+  <main class="dashboard-content">
+    <section class="dashboard-welcome" id="overview">
+      <div><span class="dashboard-kicker">Monday, July 20</span><h1>Good morning, Vishwa.</h1><p>Here is what is happening across your Stackly workspace today.</p></div>
+      <button class="dashboard-primary">+ New project</button>
+    </section>
+    <section class="dashboard-stat-grid" aria-label="Account overview">
+      <article><span>Active projects</span><strong>12</strong><small class="positive">↑ 8.4% this month</small></article>
+      <article><span>Tasks completed</span><strong>148</strong><small class="positive">↑ 12.1% this month</small></article>
+      <article><span>Storage used</span><strong>68%</strong><small>34 GB of 50 GB</small></article>
+      <article><span>Next invoice</span><strong>₹4,800</strong><small>Due August 01</small></article>
+    </section>
+    <section class="dashboard-main-grid" id="performance">
+      <article class="dash-widget chart-widget"><div class="widget-heading"><div><span class="widget-kicker">Performance</span><h2>Workspace activity</h2></div><select aria-label="Activity period"><option>Last 7 days</option><option>Last 30 days</option></select></div><div class="chart-bars" aria-label="Weekly activity chart"><i style="--h:42%"></i><i style="--h:62%"></i><i style="--h:48%"></i><i style="--h:78%"></i><i style="--h:66%"></i><i style="--h:92%"></i><i style="--h:74%"></i></div><div class="chart-labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></article>
+      <article class="dash-widget progress-widget"><div class="widget-heading"><div><span class="widget-kicker">Goal</span><h2>Monthly target</h2></div><strong>82%</strong></div><div class="goal-ring"><span>82<small>%</small></span></div><p>41 of 50 milestones completed</p></article>
+    </section>
+    <section class="dash-widget" id="projects"><div class="widget-heading"><div><span class="widget-kicker">Projects</span><h2>Recent projects</h2></div><button class="text-button">View all →</button></div><div class="dashboard-table"><div class="table-row table-head"><span>Project</span><span>Status</span><span>Progress</span><span>Updated</span></div><div class="table-row"><span><b>Brand system refresh</b><small>Design</small></span><span><em class="status active">Active</em></span><span><div class="mini-progress"><i style="width:78%"></i></div>78%</span><span>2h ago</span></div><div class="table-row"><span><b>Mobile app launch</b><small>Development</small></span><span><em class="status review">Review</em></span><span><div class="mini-progress"><i style="width:54%"></i></div>54%</span><span>Yesterday</span></div><div class="table-row"><span><b>Q3 campaign</b><small>Marketing</small></span><span><em class="status planning">Planning</em></span><span><div class="mini-progress"><i style="width:26%"></i></div>26%</span><span>Jul 18</span></div></div></section>
+    <section class="dashboard-split-grid">
+      <article class="dash-widget" id="billing"><div class="widget-heading"><div><span class="widget-kicker">Billing</span><h2>Recent invoices</h2></div><button class="text-button">Manage</button></div><ul class="clean-list"><li><span><b>INV-2026-072</b><small>July subscription</small></span><strong>₹4,800 <em class="status active">Paid</em></strong></li><li><span><b>INV-2026-061</b><small>June subscription</small></span><strong>₹4,800 <em class="status active">Paid</em></strong></li></ul></article>
+      <article class="dash-widget" id="documents"><div class="widget-heading"><div><span class="widget-kicker">Files</span><h2>Recent documents</h2></div><button class="text-button">Open library</button></div><ul class="clean-list"><li><span class="file-icon">PDF</span><span><b>Project proposal.pdf</b><small>2.4 MB · Today</small></span><button>⋯</button></li><li><span class="file-icon">DOC</span><span><b>Brand guidelines.docx</b><small>8.1 MB · Jul 19</small></span><button>⋯</button></li></ul></article>
+    </section>
+    <section class="dash-widget support-widget" id="support"><div><span class="widget-kicker">Premium support</span><h2>Need help with your workspace?</h2><p>Our specialist team is ready to help you get the most from Stackly.</p></div><button class="dashboard-primary">Contact support</button></section>
+  </main>
+</div>
+<script src="dashboard.js"></script>
+</body>
+</html>

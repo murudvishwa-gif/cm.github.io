@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — VELOX Chemical</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/stackly-logo.png" alt="Stackly" class="brand-logo">
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="links" id="navLinks">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="blogs.html" class="nav-link">Blogs</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-ghost" onclick="openAuth('login')"><span>Log In</span></button>
+      <button class="btn btn-primary" onclick="openAuth('signup')"><span>Sign Up</span></button>
+    </div>
+  </div>
+</header>
+<main id="site">
+  <section id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">What We Run</div>
+        <h2>Six stages, one production line</h2>
+        <p>Every project moves through the same reactor line — from first synthesis to final compliance sign-off — so nothing gets improvised mid-batch.</p>
+      </div>
+      <div class="services-grid reveal-stagger">
+        <div class="service-card">
+          <div class="code">R-01</div>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6h8M22 6v12l-11 20a4 4 0 0 0 3.6 6h18.8a4 4 0 0 0 3.6-6L26 18V6"/></svg>
+          <h3>Custom Synthesis</h3>
+          <p>Bespoke molecule design and small-batch synthesis for R&D and pre-production trials.</p>
+        </div>
+        <div class="service-card">
+          <div class="code">R-02</div>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><circle cx="24" cy="24" r="8"/><path d="M24 4v6M24 38v6M44 24h-6M10 24H4M37.5 10.5l-4.2 4.2M14.7 33.3l-4.2 4.2M37.5 37.5l-4.2-4.2M14.7 14.7l-4.2-4.2"/></svg>
+          <h3>Bulk Manufacturing</h3>
+          <p>Continuous and batch reactor lines scaling from pilot volumes to full production tonnage.</p>
+        </div>
+        <div class="service-card">
+          <div class="code">R-03</div>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 8h28v12l-8 8 8 8v12H10V36l8-8-8-8Z"/></svg>
+          <h3>Formulation &amp; Blending</h3>
+          <p>Precision blending lines that hold ratio tolerances to the fourth decimal.</p>
+        </div>
+        <div class="service-card">
+          <div class="code">R-04</div>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 4 6 12v10c0 11 7.7 18.9 18 22 10.3-3.1 18-11 18-22V12Z"/><path d="M17 24l5 5 9-10"/></svg>
+          <h3>Quality Testing</h3>
+          <p>In-house spectroscopy and chromatography labs verify every batch before release.</p>
+        </div>
+        <div class="service-card">
+          <div class="code">R-05</div>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="18" width="24" height="16" rx="1"/><path d="M28 22h8l8 6v6h-16z"/><circle cx="14" cy="38" r="3"/><circle cx="36" cy="38" r="3"/></svg>
+          <h3>Packaging &amp; Logistics</h3>
+          <p>Drum, IBC and bulk tanker fulfillment with cold-chain options for sensitive compounds.</p>
+        </div>
+        <div class="service-card">
+          <div class="code">R-06</div>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 4 8 10v11c0 11.3 7 19.7 16 23 9-3.3 16-11.7 16-23V10Z"/><path d="M24 16v10M24 30h.01"/></svg>
+          <h3>Regulatory Compliance</h3>
+          <p>REACH, OSHA and regional documentation handled before your shipment ever leaves the dock.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="process" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Production process</div>
+        <h2>Six steps from design to dispatch</h2>
+        <p>Every project follows the same engineered path so we can capture learnings, reduce risk and deliver consistent chemistry.</p>
+      </div>
+      <div class="feature-grid reveal-stagger">
+        <div class="feature-card"><h3>1. Concept validation</h3><p>We validate target properties and develop a manufacturing-friendly recipe before any active material is produced.</p></div>
+        <div class="feature-card"><h3>2. Pilot batch run</h3><p>A small-scale run confirms process behavior, analytics and material handling before full production.</p></div>
+        <div class="feature-card"><h3>3. Scale optimization</h3><p>Our engineers translate pilot data into stable conditions for the chosen reactor and downstream equipment.</p></div>
+      </div>
+      <div class="feature-grid reveal-stagger" style="margin-top:24px;">
+        <div class="feature-card"><h3>4. QC and release</h3><p>Every lot is tested for identity, purity and application-specific metrics before it ships.</p></div>
+        <div class="feature-card"><h3>5. Packaging</h3><p>We package materials in formats selected for transport, storage and customer handling requirements.</p></div>
+        <div class="feature-card"><h3>6. Compliance handoff</h3><p>Regulatory documentation and customs-ready paperwork are prepared before the load leaves the dock.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="solutions" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">How we help</div>
+        <h2>Turn your chemical specification into production-ready material</h2>
+        <p>Velox combines laboratory development, process engineering and manufacturing execution to deliver products that meet technical, regulatory and supply requirements.</p>
+      </div>
+      <div class="feature-grid reveal-stagger">
+        <div class="feature-card"><h3>Pilot-to-production handoff</h3><p>We validate early batches and capture process conditions so scale-up is predictable and repeatable.</p></div>
+        <div class="feature-card"><h3>Documentation-first approach</h3><p>Every formulation, test result and packaging decision is documented to support traceability and audits.</p></div>
+        <div class="feature-card"><h3>Special handling</h3><p>Our lines support sensitive chemistries with controlled temperature, closed transfers and specialized packaging.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="verticals" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Industry focus</div>
+        <h2>Manufacturing built for regulated applications</h2>
+        <p>We support customers in materials, coatings, agrochemicals and specialty intermediates with tailored production controls.</p>
+      </div>
+      <div class="feature-grid reveal-stagger">
+        <div class="feature-card"><h3>Advanced materials</h3><p>High-purity intermediates for polymer additives and specialty performance chemistries.</p></div>
+        <div class="feature-card"><h3>Coatings</h3><p>Formulated batches for pigments, binders and resin systems with tight viscosity and solids tolerances.</p></div>
+        <div class="feature-card"><h3>Agrochemicals</h3><p>Custom synthesis and blending for active ingredients and formulation vehicles.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="outcomes" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Proven outcomes</div>
+        <h2>Performance metrics our customers care about</h2>
+        <p>Reduced variation, shorter time-to-batch and simplified regulatory handoffs are the core benefits of our approach.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="num">15%</div><div class="label">Average cycle time reduction</div></div>
+        <div class="stat-card"><div class="num">99.8%</div><div class="label">Batch release consistency</div></div>
+        <div class="stat-card"><div class="num">4</div><div class="label">Week setup to first pilot</div></div>
+        <div class="stat-card"><div class="num">100%</div><div class="label">Required documentation delivered</div></div>
+      </div>
+    </div>
+  </section>
+  <section id="choice" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Why choose Velox</div>
+        <h2>Structured operations, flexible chemistry</h2>
+        <p>We combine manufacturing rigor with the responsiveness required for custom and regulated batch work.</p>
+      </div>
+      <div class="card-panel">
+        <p>From material selection to transport logistics, our services are designed so customers can move forward with confidence instead of relying on ad hoc production fixes.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo"><img src="assets/stackly-logo.png" alt="Stackly" class="brand-logo"></a>
+      <p>Precision chemical manufacturing for partners who need predictable quality, fast turnarounds, and compliance-ready production every time.</p>
+      <div class="footer-social">
+        <a href="404.html" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v8h-4v-8a2 2 0 0 0-2-2h-2v10h-4V8h4V6.5C14 4.57 15.57 3 17.5 3S21 4.57 21 6.5V8h-5z"/></svg>
+        </a>
+        <a href="404.html" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 5.92c-.8.35-1.65.58-2.55.69a4.44 4.44 0 0 0 1.96-2.45 8.8 8.8 0 0 1-2.8 1.08 4.4 4.4 0 0 0-7.5 4.02A12.48 12.48 0 0 1 3.15 4.8a4.37 4.37 0 0 0-.6 2.21 4.4 4.4 0 0 0 1.96 3.66 4.37 4.37 0 0 1-2-.56v.06a4.4 4.4 0 0 0 3.52 4.31 4.44 4.44 0 0 1-2 .08 4.4 4.4 0 0 0 4.11 3.05A8.82 8.82 0 0 1 2 19.54 12.43 12.43 0 0 0 8.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.54A8.36 8.36 0 0 0 22 5.92z"/></svg>
+        </a>
+        <a href="404.html" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5v-11z"/><path d="M21 6.5 12 13 3 6.5"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blogs.html">Insights</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-column">
+      <h4>Capabilities</h4>
+      <a href="services.html">Custom synthesis</a>
+      <a href="services.html">Quality testing</a>
+      <a href="services.html">Packaging</a>
+      <a href="services.html">Regulatory support</a>
+    </div>
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <p>info@stackly.com</p>
+      <p>7010792745</p>
+      <p>Salem, Tamil Nadu</p>
+    </div>
+    <div class="footer-column footer-subscribe">
+      <h4>Stay informed</h4>
+      <p>Receive production insights, regulatory updates, and new service announcements.</p>
+      <form class="newsletter-form footer-newsletter-form">
+        <input type="email" placeholder="you@company.com" aria-label="Email for newsletter">
+        <button type="submit" class="btn btn-primary"><span>Subscribe</span></button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Velox Chemical Co. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Site map</a>
+    </div>
+  </div>
+</footer>
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-card">
+    <button class="auth-close" onclick="closeAuth()" aria-label="Close">✕</button>
+    <div class="auth-panel active" id="loginPanel">
+      <div class="auth-eyebrow">Client Portal</div>
+      <h2>Log in</h2>
+      <p class="sub">Access batch records, certificates of analysis and shipment tracking.</p>
+      <form class="auth-form" onsubmit="return submitAuth(event,'login')">
+        <div class="field"><label for="li-email">Email</label><input id="li-email" type="email" required placeholder="you@company.com"></div>
+        <div class="field"><label for="li-domain">Domain</label><select id="li-domain" required><option value="" selected disabled>Choose your domain</option><option>Manufacturing</option><option>Research &amp; Development</option><option>Pharmaceutical</option><option>Supplier</option><option>Other</option></select></div>
+        <div class="field"><label for="li-pass">Password</label><input id="li-pass" type="password" required placeholder="••••••••"></div>
+        <div class="auth-form-options"><button type="button" class="forgot-password" onclick="requestPasswordReset()">Forgot password?</button></div>
+        <p class="auth-message" aria-live="polite"></p>
+        <button type="submit" class="btn btn-primary auth-submit"><span>Log In</span></button>
+      </form>
+      <div class="auth-switch">New to Velox? <button onclick="switchAuth('signup')">Create an account</button></div>
+    </div>
+    <div class="auth-panel" id="signupPanel">
+      <div class="auth-eyebrow">Client Portal</div>
+      <h2>Sign up</h2>
+      <p class="sub">Set up an account to request quotes and track production runs.</p>
+      <form class="auth-form" onsubmit="return submitAuth(event,'signup')">
+        <div class="field"><label for="su-name">Company name</label><input id="su-name" type="text" required placeholder="Acme Industries"></div>
+        <div class="field"><label for="su-email">Email</label><input id="su-email" type="email" required placeholder="you@company.com"></div>
+        <div class="field"><label for="su-pass">Password</label><input id="su-pass" type="password" required placeholder="••••••••"></div>
+        <button type="submit" class="btn btn-primary auth-submit"><span>Create Account</span></button>
+      </form>
+      <div class="auth-switch">Already have an account? <button onclick="switchAuth('login')">Log in</button></div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
