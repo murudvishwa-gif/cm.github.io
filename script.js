@@ -91,16 +91,7 @@ if (authOverlay) {
   window.toggleDomainField = toggleDomainField;
   window.selectAuthRole = selectAuthRole;
   window.requestPasswordReset = function requestPasswordReset(){
-    const email = document.getElementById('li-email');
-    const message = document.querySelector('#loginPanel .auth-message');
-    if (!email.value || !email.checkValidity()) {
-      message.textContent = 'Enter a valid email address first.';
-      message.className = 'auth-message error';
-      email.focus();
-      return;
-    }
-    message.textContent = `Password reset instructions sent to ${email.value}.`;
-    message.className = 'auth-message success';
+    window.location.href = '404.html';
   };
   window.submitAuth = function submitAuth(e, type){
     e.preventDefault();
@@ -124,6 +115,9 @@ const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e){
     e.preventDefault();
+    if (this.checkValidity()) window.location.href = '404.html';
+    else this.reportValidity();
+    return;
     const note = document.getElementById('formNote');
     note.textContent = 'Sending…';
     note.className = 'form-note';
@@ -134,3 +128,19 @@ if (contactForm) {
     }, 900);
   });
 }
+
+document.querySelectorAll('.blog-newsletter-form').forEach((form) => {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (form.checkValidity()) window.location.href = '404.html';
+    else form.reportValidity();
+  });
+});
+
+document.querySelectorAll('.footer-newsletter-form').forEach((form) => {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (form.checkValidity()) window.location.href = '404.html';
+    else form.reportValidity();
+  });
+});

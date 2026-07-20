@@ -69,6 +69,37 @@
   }));
 
   const isAdmin = document.body.classList.contains('admin-theme');
+  const detailContent = isAdmin ? {
+    overview: [['Today\'s volume','18 production runs'],['Risk watch','2 escalations'],['Next review','16:30 operations call']],
+    analytics: [['Top region','South India · 38%'],['Conversion','7.8% this month'],['Forecast','₹28.4L projected']],
+    operations: [['On schedule','16 workflows'],['Cycle time','4.2 days average'],['Capacity','76% utilized']],
+    approvals: [['Due today','7 requests'],['Average wait','2h 14m'],['Delegated','4 requests']],
+    users: [['Active today','1,126 members'],['Invitations','18 pending'],['Retention','96.4% monthly']],
+    system: [['Incidents','0 active'],['Backups','Verified 03:00'],['Security','No open alerts']]
+  } : {
+    overview: [['Due today','6 tasks'],['Team online','8 members'],['Recent activity','24 updates']],
+    performance: [['Focus time','18.4 hours'],['Completion rate','92%'],['Best day','Thursday']],
+    projects: [['Upcoming','3 milestones'],['At risk','1 project'],['Collaborators','14 active']],
+    billing: [['Plan','Premium monthly'],['Payment method','Visa ending 2048'],['Next renewal','August 01, 2026']],
+    documents: [['Storage','34 GB of 50 GB'],['Shared files','128 documents'],['Last backup','Today, 03:00']],
+    support: [['Response target','Under 2 hours'],['Open tickets','1 request'],['Knowledge base','48 guides']]
+  };
+
+  sectionPanels.forEach(panel => {
+    const items = detailContent[panel.id];
+    if (!items) return;
+    const grid = document.createElement('div');
+    grid.className = 'dashboard-detail-grid';
+    grid.innerHTML = items.map(([label, value]) => `<a href="404.html"><span>${label}</span><strong>${value}</strong><small>View details →</small></a>`).join('');
+    panel.appendChild(grid);
+  });
+
+  const sidebarProfile = document.createElement('div');
+  sidebarProfile.className = 'sidebar-profile-links';
+  sidebarProfile.innerHTML = isAdmin
+    ? '<span>Account</span><button data-profile-item="account">Admin profile</button><button data-profile-item="settings">Security settings</button>'
+    : '<span>Account</span><button data-profile-item="account">My profile</button><button data-profile-item="settings">Account settings</button>';
+  sidebar.insertAdjacentElement('afterend', sidebarProfile);
   const menuContent = {
     notifications: isAdmin
       ? '<div class="popover-title"><strong>Notifications</strong><span>3 new</span></div><a href="#approvals"><b>Approval required</b><small>Enterprise upgrade needs review.</small></a><a href="#system"><b>System report ready</b><small>Weekly health report is available.</small></a><a href="#operations"><b>Workflow escalated</b><small>Two items require attention.</small></a>'
@@ -100,6 +131,10 @@
       button.setAttribute('aria-expanded', 'true');
       activePopover.addEventListener('click', popoverEvent => {
         popoverEvent.stopPropagation();
+        if (popoverEvent.target.closest('[data-profile-item]')) {
+          window.location.href = '404.html';
+          return;
+        }
         const sectionLink = popoverEvent.target.closest('a[href^="#"]');
         if (sectionLink) {
           popoverEvent.preventDefault();
@@ -108,6 +143,11 @@
         }
       });
     });
+  });
+
+  document.addEventListener('click', event => {
+    const action = event.target.closest('.dashboard-content button, .sidebar-upgrade button, .sidebar-profile-links [data-profile-item]');
+    if (action) window.location.href = '404.html';
   });
 
   document.addEventListener('click', closePopover);
