@@ -2,14 +2,39 @@ const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
 if (hamburger && navLinks) {
+  const navActions = document.querySelector('.nav-actions');
+  const navHome = { parent: navLinks.parentNode, next: navLinks.nextSibling };
+  const actionsHome = navActions ? { parent: navActions.parentNode, next: navActions.nextSibling } : null;
+  let menuIsPortaled = false;
+
+  // Fixed elements inside a blurred header are viewport-constrained on some mobile browsers.
+  // Place the overlay directly under body on mobile, then restore the desktop DOM order.
+  const syncMobileStructure = () => {
+    const shouldPortal = window.innerWidth <= 900;
+    if (shouldPortal && !menuIsPortaled) {
+      document.body.append(navLinks);
+      if (navActions) document.body.append(navActions);
+      menuIsPortaled = true;
+    } else if (!shouldPortal && menuIsPortaled) {
+      navHome.parent.insertBefore(navLinks, navHome.next);
+      if (navActions && actionsHome) actionsHome.parent.insertBefore(navActions, actionsHome.next);
+      menuIsPortaled = false;
+    }
+  };
+  syncMobileStructure();
+  const mobileMenuItems = [...navLinks.querySelectorAll('a'), ...(navActions ? navActions.querySelectorAll('button, a') : [])];
   const setMobileMenu = (open) => {
     navLinks.classList.toggle('open', open);
     hamburger.classList.toggle('active', open);
     hamburger.setAttribute('aria-expanded', String(open));
+    hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    navLinks.setAttribute('aria-hidden', String(!open && window.innerWidth <= 900));
     document.body.classList.toggle('mobile-menu-open', open);
+    if (open) requestAnimationFrame(() => navLinks.querySelector('a')?.focus());
   };
   hamburger.setAttribute('aria-expanded', 'false');
   hamburger.setAttribute('aria-controls', 'navLinks');
+  hamburger.setAttribute('aria-label', 'Open menu');
   hamburger.addEventListener('click', (event) => {
     event.stopPropagation();
     setMobileMenu(!navLinks.classList.contains('open'));
@@ -18,8 +43,25 @@ if (hamburger && navLinks) {
   document.addEventListener('click', (event) => {
     if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) setMobileMenu(false);
   });
-  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMobileMenu(false); });
-  window.addEventListener('resize', () => { if (window.innerWidth > 900) setMobileMenu(false); });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && navLinks.classList.contains('open')) {
+      setMobileMenu(false);
+      hamburger.focus();
+    }
+    if (event.key === 'Tab' && navLinks.classList.contains('open')) {
+      const focusable = [hamburger, ...mobileMenuItems];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) setMobileMenu(false);
+    syncMobileStructure();
+    navLinks.setAttribute('aria-hidden', String(window.innerWidth <= 900 && !navLinks.classList.contains('open')));
+  });
+  navLinks.setAttribute('aria-hidden', String(window.innerWidth <= 900));
 }
 
 const navA = document.querySelectorAll('.nav-link');
