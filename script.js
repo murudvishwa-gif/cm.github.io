@@ -139,6 +139,16 @@ if (authOverlay) {
     e.preventDefault();
     const btn = e.target.querySelector('button[type="submit"] span');
     const original = btn.textContent;
+    const emailInput = e.target.querySelector('input[type="email"]');
+    const nameInput = type === 'signup' ? e.target.querySelector('#su-name') : null;
+    const email = emailInput?.value.trim() || '';
+    const emailName = email.split('@')[0]
+      .replace(/[._-]+/g, ' ')
+      .replace(/\b\w/g, letter => letter.toUpperCase());
+    let savedUser = {};
+    try { savedUser = JSON.parse(localStorage.getItem('veloxUser') || '{}'); } catch (error) { savedUser = {}; }
+    const name = nameInput?.value.trim() || (savedUser.email === email ? savedUser.name : '') || emailName || 'User';
+    localStorage.setItem('veloxUser', JSON.stringify({ name, email }));
     btn.textContent = type === 'login' ? 'Logging in…' : 'Creating account…';
     setTimeout(() => {
       btn.textContent = type === 'login' ? 'Logged in ✓' : 'Account created ✓';

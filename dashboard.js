@@ -69,6 +69,20 @@
   }));
 
   const isAdmin = document.body.classList.contains('admin-theme');
+  const escapeHtml = value => String(value).replace(/[&<>"']/g, character => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[character]);
+  let currentUser = { name: 'User', email: '' };
+  if (!isAdmin) {
+    try { currentUser = { ...currentUser, ...JSON.parse(localStorage.getItem('veloxUser') || '{}') }; } catch (error) { /* Use safe defaults. */ }
+    currentUser.name = String(currentUser.name || 'User').trim();
+    currentUser.email = String(currentUser.email || '').trim();
+    const nameParts = currentUser.name.split(/\s+/).filter(Boolean);
+    const initials = nameParts.slice(0, 2).map(part => part[0]).join('').toUpperCase() || 'U';
+    document.querySelectorAll('[data-user-name]').forEach(element => { element.textContent = currentUser.name; });
+    document.querySelectorAll('[data-user-first-name]').forEach(element => { element.textContent = nameParts[0] || 'User'; });
+    document.querySelectorAll('[data-user-initials]').forEach(element => { element.textContent = initials; });
+  }
   const detailContent = isAdmin ? {
     overview: [['Today\'s volume','18 production runs'],['Risk watch','2 escalations'],['Next review','16:30 operations call']],
     analytics: [['Top region','South India · 38%'],['Conversion','7.8% this month'],['Forecast','₹28.4L projected']],
@@ -106,7 +120,7 @@
       : '<div class="popover-title"><strong>Notifications</strong><span>2 new</span></div><a href="#projects"><b>Project updated</b><small>Brand system refresh reached 78%.</small></a><a href="#billing"><b>Payment confirmed</b><small>Your July invoice has been paid.</small></a>',
     profile: isAdmin
       ? '<div class="popover-profile"><span class="profile-avatar">AD</span><div><b>Administrator</b><small>admin@stackly.com</small></div></div><button data-profile-item="account">Admin profile</button><button data-profile-item="settings">Security settings</button><a href="index.html" class="popover-logout">Log out</a>'
-      : '<div class="popover-profile"><span class="profile-avatar">VK</span><div><b>Vishwa Kumar</b><small>info@stackly.com</small></div></div><button data-profile-item="account">My profile</button><button data-profile-item="settings">Account settings</button><a href="index.html" class="popover-logout">Log out</a>'
+      : `<div class="popover-profile"><span class="profile-avatar">${escapeHtml(currentUser.name.split(/\s+/).slice(0, 2).map(part => part[0]).join('').toUpperCase() || 'U')}</span><div><b>${escapeHtml(currentUser.name)}</b><small>${escapeHtml(currentUser.email || 'Member account')}</small></div></div><button data-profile-item="account">My profile</button><button data-profile-item="settings">Account settings</button><a href="index.html" class="popover-logout">Log out</a>`
   };
 
   let activePopover = null;

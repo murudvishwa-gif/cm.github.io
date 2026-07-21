@@ -224,7 +224,7 @@
       <h2>Sign up</h2>
       <p class="sub">Set up an account to request quotes and track production runs.</p>
       <form class="auth-form" onsubmit="return submitAuth(event,'signup')">
-        <div class="field"><label for="su-name">Company name</label><input id="su-name" type="text" required placeholder="Acme Industries"></div>
+        <div class="field"><label for="su-name">Your name</label><input id="su-name" type="text" required placeholder="Your full name" autocomplete="name"></div>
         <div class="field"><label for="su-email">Email</label><input id="su-email" type="email" required placeholder="you@company.com"></div>
         <div class="field"><label for="su-pass">Password</label><input id="su-pass" type="password" required placeholder="••••••••"></div>
         <button type="submit" class="btn btn-primary auth-submit"><span>Create Account</span></button>
